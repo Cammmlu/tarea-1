@@ -1,0 +1,299 @@
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import { Settings } from "lucide-react";
+import React from "react";
+
+export default function IniciarSesion(): JSX.Element {
+  // Game data for mapping
+  const games = [
+    {
+      id: 1,
+      name: "FORTNITE",
+      icon: "./image-6.png", // Placeholder for the game icon
+      banner: "./image-5.png", // Placeholder for the game banner
+    },
+    {
+      id: 2,
+      name: "FALL GUYS",
+      icon: "./image-8.png", // Placeholder for the game icon
+      banner: "./image-7.png", // Placeholder for the game banner
+    },
+  ];
+
+  return (
+    <div className="bg-[#010101] flex flex-row justify-center w-full">
+      <div className="bg-[#010101] border border-solid border-black w-[430px] h-[932px] relative">
+        {/* Header with Epic Games logo and Store text */}
+        <div className="flex items-center absolute top-0 left-0">
+          <img
+            className="w-[182px] h-36 object-cover"
+            alt="Epic Games Logo"
+            src="./image-4.png"
+          />
+          <h1 className="absolute top-[33px] left-[93px] font-normal text-white text-4xl tracking-[0] leading-[normal] whitespace-nowrap">
+            STORE
+          </h1>
+        </div>
+
+        {/* Settings icon */}
+        <div className="absolute top-3.5 right-[21px]">
+          <Settings className="w-[68px] h-[75px] text-white" />
+        </div>
+
+        {/* Game listings */}
+        <div className="flex flex-col gap-6 absolute top-36 left-0 right-0 px-[22px]">
+          {/* Fortnite Card */}
+          <Card className="bg-transparent border-0">
+            <CardContent className="p-0">
+              <img
+                className="w-full h-[185px] object-cover"
+                alt="Fortnite Banner"
+                src="./image-5.png"
+              />
+              <div className="flex items-center justify-between mt-4">
+                <div className="flex items-center gap-2">
+                  <img
+                    className="w-[67px] h-[67px] object-cover"
+                    alt="Fortnite Icon"
+                    src="./image-6.png"
+                  />
+                  <span className="font-normal text-white text-base tracking-[0] leading-[normal] whitespace-nowrap">
+                    FORTNITE
+                  </span>
+                </div>
+                <Button className="bg-[#605b5b] hover:bg-[#605b5b] rounded-[30px] w-[137px] h-[47px]">
+                  <span className="font-normal text-[#0b4383] text-xl tracking-[0] leading-[normal] whitespace-nowrap">
+                    INSTALL
+                  </span>
+                </Button>
+              </div>
+            </CardContent>
+          </Card>
+
+          {/* Fall Guys Card */}
+          <Card className="bg-transparent border-0 mt-[200px]">
+            <CardContent className="p-0">
+              <img
+                className="w-full h-[185px] object-cover"
+                alt="Fall Guys Banner"
+                src="./image-7.png"
+              />
+              <div className="flex items-center justify-between mt-4">
+                <div className="flex items-center gap-2">
+                  <img
+                    className="w-[67px] h-[67px] object-cover"
+                    alt="Fall Guys Icon"
+                    src="./image-8.png"
+                  />
+                  <span className="font-normal text-white text-base tracking-[0] leading-[normal] whitespace-nowrap">
+                    FALL GUYS
+                  </span>
+                </div>
+                <Button className="bg-[#605b5b] hover:bg-[#605b5b] rounded-[30px] w-[137px] h-[47px]">
+                  <span className="font-normal text-[#0b4383] text-xl tracking-[0] leading-[normal] whitespace-nowrap">
+                    INSTALL
+                  </span>
+                </Button>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+      </div>
+    </div>
+  );
+}
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import { Settings } from "lucide-react";
+import React from "react";
+
+export default function GameStore(): JSX.Element {
+  // Game data for mapping
+  const games = [
+    {
+      id: 1,
+      name: "ROCKET LEAGUE",
+      logoSrc: "", // Placeholder for image9
+      installButtonPosition: "top-[343px]",
+      namePosition: "top-[362px]",
+    },
+    {
+      id: 2,
+      name: "GENSHIN IMPACT",
+      logoSrc: "", // Placeholder for image2
+      installButtonPosition: "top-[677px]",
+      namePosition: "top-[695px]",
+    },
+  ];
+
+  return (
+    <div className="bg-[#010101] flex flex-row justify-center w-full">
+      <div className="bg-[#010101] border border-solid border-black w-[430px] h-[932px] relative">
+        {/* Header Section */}
+        <div className="relative w-[413px] h-[329px]">
+          <div className="flex items-center p-8">
+            {/* Epic Games Logo */}
+            <div className="flex items-center">
+              <img
+                className="w-[182px] h-36 object-cover"
+                alt="Epic Games Logo"
+                src=""
+              />
+              <div className="ml-[-90px] font-['ABeeZee-Regular',Helvetica] font-normal text-white text-4xl">
+                STORE
+              </div>
+            </div>
+
+            {/* Settings Icon */}
+            <div className="ml-auto">
+              <Settings className="w-[68px] h-[75px] text-white" />
+            </div>
+          </div>
+
+          {/* Featured Game Banner */}
+          <img
+            className="w-[391px] h-48 mx-auto mt-4"
+            alt="Featured Game"
+            src=""
+          />
+        </div>
+
+        {/* Game Cards */}
+        {games.map((game) => (
+          <div
+            key={game.id}
+            className={`absolute ${game.namePosition === "top-[362px]" ? "top-[334px]" : "top-[671px]"} left-0 flex w-full px-4`}
+          >
+            <Card className="flex items-center w-full bg-transparent border-0">
+              <CardContent className="flex items-center justify-between p-2 w-full">
+                <div className="flex items-center">
+                  <img
+                    className={`${game.namePosition === "top-[362px]" ? "w-[82px] h-[82px]" : "w-[67px] h-[67px]"} object-cover`}
+                    alt={`${game.name} Logo`}
+                    src={game.logoSrc}
+                  />
+                  <div className="ml-2 font-['Font_Awesome_5_Brands-Regular',Helvetica] font-normal text-white text-base">
+                    {game.name.split(" ").map((word, index) => (
+                      <React.Fragment key={index}>
+                        {word}
+                        {index < game.name.split(" ").length - 1 && <br />}
+                      </React.Fragment>
+                    ))}
+                  </div>
+                </div>
+                <Button className="bg-[#605b5b] rounded-[30px] w-[137px] h-[47px]">
+                  <span className="font-['Font_Awesome_5_Brands-Regular',Helvetica] font-normal text-[#0b4383] text-xl">
+                    INSTALL
+                  </span>
+                </Button>
+              </CardContent>
+            </Card>
+          </div>
+        ))}
+
+        {/* Middle Game Banner */}
+        <img
+          className="absolute w-[387px] h-[199px] top-[466px] left-[21px]"
+          alt="Genshin Impact Banner"
+          src=""
+        />
+      </div>
+    </div>
+  );
+}
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import { Settings } from "lucide-react";
+import React from "react";
+
+export default function IniciarSesion(): JSX.Element {
+  // Game data for mapping
+  const games = [
+    {
+      id: 1,
+      title: "THE SIMS",
+      logo: "./image-5.png",
+      banner: "./image.png",
+    },
+    {
+      id: 2,
+      title: "GRAND THEFT AUTO",
+      logo: "./image-2.png",
+      banner: "./image-3.png",
+    },
+  ];
+
+  return (
+    <div className="flex justify-center w-full bg-[#010101]">
+      <div className="relative w-[430px] h-[932px] bg-[#010101] border border-solid border-black">
+        {/* Header Section */}
+        <header className="relative w-full h-[329px]">
+          <div className="absolute top-0 left-0 w-full">
+            {/* Epic Games Logo */}
+            <div className="flex items-center">
+              <img
+                className="w-[182px] h-36 object-cover"
+                alt="Epic Games Logo"
+                src="./image-4.png"
+              />
+              <h1 className="absolute left-[93px] top-[33px] text-4xl text-white font-normal [font-family:'ABeeZee-Regular',Helvetica]">
+                STORE
+              </h1>
+            </div>
+
+            {/* Settings Icon */}
+            <div className="absolute top-3.5 right-[22px]">
+              <Settings className="w-[68px] h-[75px] text-white" />
+            </div>
+
+            {/* Featured Game Banner */}
+            <img
+              className="absolute w-[391px] h-48 top-[137px] left-[22px] object-cover"
+              alt="The Sims 4 Banner"
+              src="./image.png"
+            />
+          </div>
+        </header>
+
+        {/* Game List */}
+        <div className="mt-[329px] px-[11px]">
+          {games.map((game, index) => (
+            <Card key={game.id} className="bg-transparent border-none mb-6">
+              <CardContent className="p-0 flex items-center">
+                <img
+                  className="w-[82px] h-[82px] object-cover"
+                  alt={`${game.title} Logo`}
+                  src={game.logo}
+                />
+                <div className="ml-[10px] [font-family:'Font_Awesome_5_Brands-Regular',Helvetica] font-normal text-white text-base">
+                  {game.title.split(" ").map((word, i) => (
+                    <React.Fragment key={i}>
+                      {i > 0 && <br />}
+                      {word}
+                    </React.Fragment>
+                  ))}
+                </div>
+                <div className="ml-auto">
+                  <Button className="w-[137px] h-[47px] bg-[#605b5b] rounded-[30px] hover:bg-[#4a4747]">
+                    <span className="[font-family:'Font_Awesome_5_Brands-Regular',Helvetica] font-normal text-[#0b4383] text-xl">
+                      INSTALL
+                    </span>
+                  </Button>
+                </div>
+              </CardContent>
+
+              {/* Game Banner (only for GTA which has a banner below the entry) */}
+              {index === 1 && (
+                <img
+                  className="w-[387px] h-[199px] mt-4 object-cover"
+                  alt="Grand Theft Auto Banner"
+                  src="./image-3.png"
+                />
+              )}
+            </Card>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+}
